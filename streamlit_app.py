@@ -15,7 +15,7 @@ def preprocess_image(im_path):
 
     # Escalar los pixeles a un rango de 0 a 1
     # Redimensionar el tamaño de la imagen
-    #im = cv2.resize(im, (IMG_WIDTH, IM_HEIGHT))
+    im = cv2.resize(im, (IMG_WIDTH, IM_HEIGHT))
     return im
 
 
