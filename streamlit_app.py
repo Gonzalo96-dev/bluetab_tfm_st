@@ -7,7 +7,8 @@ from PIL import Image
 #Instalado keras y keras-preprocessing
 import preprocessing
 
-def preprocess_image(im_path):
+
+"""def preprocess_image(im_path):
     im = cv2.imread(im_path, cv2.IMREAD_UNCHANGED)
     if im is None:
         print("La imagen no se ha leido correctamente: ", im_path)
@@ -17,7 +18,7 @@ def preprocess_image(im_path):
     # Redimensionar el tamaño de la imagen
     im = cv2.resize(im, (IMG_WIDTH, IM_HEIGHT))
     return im
-
+"""
 
 def predict(im):
     model =
