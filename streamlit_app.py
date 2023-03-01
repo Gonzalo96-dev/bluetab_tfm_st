@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import cv2
 from PIL import Image
-from tensorflow.keras import preprocessing
-
+#Instalado keras y keras-preprocessing
+import preprocessing
 
 def preprocess_image(im_path):
     im = cv2.imread(im_path, cv2.IMREAD_UNCHANGED)
@@ -20,7 +20,7 @@ def preprocess_image(im_path):
 
 
 def predict(im):
-    model = model
+    model =
     test_image = preprocess_image(image)
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
