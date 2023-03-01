@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import cv2
 from PIL import Image
-#Instalado keras y keras-preprocessing
+# Installation keras y keras-preprocessing
 import preprocessing
 
 
-"""def preprocess_image(im_path):
+def preprocess_image(im_path):
     im = cv2.imread(im_path, cv2.IMREAD_UNCHANGED)
     if im is None:
         print("La imagen no se ha leido correctamente: ", im_path)
@@ -16,12 +16,13 @@ import preprocessing
 
     # Escalar los pixeles a un rango de 0 a 1
     # Redimensionar el tamaño de la imagen
-    im = cv2.resize(im, (IMG_WIDTH, IM_HEIGHT))
+    im = cv2.resize(im, (225, 225))
     return im
-"""
-#BORRAR ESTA LINEA EN EL SIGUIENTE COMMIT
+
+
+# BORRAR ESTA LINEA EN EL SIGUIENTE COMMIT
 def predict(im):
-    model =
+    model = model
     test_image = preprocess_image(image)
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
@@ -39,8 +40,9 @@ def predict(im):
     result = f"{class_names[np.argmax(scores)]} with a {(100 * np.max(scores)).round(2)} percent confidence."
     return result
 
+
 st.header("What is the category? Yelp edition")
-file_uploaded = st.file_uploader("Choose file", type= ['png', 'jpg', 'jpeg'])
+file_uploaded = st.file_uploader("Choose file", type=['png', 'jpg', 'jpeg'])
 
 if file_uploaded is not None:
     fig, ax = plt.subplots()
