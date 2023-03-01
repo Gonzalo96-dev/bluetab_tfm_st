@@ -19,7 +19,7 @@ import preprocessing
     im = cv2.resize(im, (IMG_WIDTH, IM_HEIGHT))
     return im
 """
-
+#BORRAR ESTA LINEA EN EL SIGUIENTE COMMIT
 def predict(im):
     model =
     test_image = preprocess_image(image)
