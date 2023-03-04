@@ -6,6 +6,7 @@ import cv2
 from PIL import Image
 # Installation keras y keras-preprocessing
 import preprocessing
+import pickle
 
 
 def preprocess_image(im_path):
@@ -22,7 +23,7 @@ def preprocess_image(im_path):
 
 # BORRAR ESTA LINEA EN EL SIGUIENTE COMMIT
 def predict(im):
-    model = model
+    model = pickle.load("")
     test_image = preprocess_image(image)
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
