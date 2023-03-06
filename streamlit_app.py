@@ -7,8 +7,12 @@ from PIL import Image
 # Installation keras y keras-preprocessing
 import preprocessing
 import pickle
+import time
 
+col1, col2, col3 = st.columns([1, 2, 1])
 
+if 'image' not in st.session_state:
+    st.session_state['image'] = 'not done'
 def preprocess_image(im_path):
     im = cv2.imread(im_path, cv2.IMREAD_UNCHANGED)
     if im is None:
@@ -42,8 +46,30 @@ def predict(im):
     return result
 
 
-st.header("What is the category? Yelp edition")
-file_uploaded = st.file_uploader("Choose file", type=['png', 'jpg', 'jpeg'])
+col1.header("What is the category? Yelp edition")
+with col1.expander("Click for more information"):
+    st.write('This model reads an image you upload on a restaurant and classifies it into five categories:'
+             '- Food'
+             '- Drinks'
+             '- Exterior'
+             '- Interior'
+             '- Menu')
+
+def change_image_state():
+    st.session_state['image'] = 'done'
+
+file_uploaded = col2.file_uploader("Choose file", type=['png', 'jpg', 'jpeg'], on_change= change_image_state)
+
+
+#Creamos una barra de progreso
+progress_bar = col2.progress(0)
+for perc_completed in range(100):
+    time.sleep(0.05)
+    progress_bar.progress(perc_completed + 1)
+
+col2.success("Photo updated succesfully")
+
+
 
 if file_uploaded is not None:
     fig, ax = plt.subplots()
