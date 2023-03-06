@@ -2,7 +2,7 @@ import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
 import tensorflow as tf
-import cv2
+#import cv2
 from PIL import Image
 # Installation keras y keras-preprocessing
 import preprocessing
@@ -27,7 +27,8 @@ def preprocess_image(im_path):
 
 # BORRAR ESTA LINEA EN EL SIGUIENTE COMMIT
 def predict(im):
-    model = pickle.load("")
+    #with open('test_10000_de_vit_def.py', 'rb') as f:
+     #   model = pickle.load(f)
     test_image = preprocess_image(image)
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
