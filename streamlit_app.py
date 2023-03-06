@@ -48,7 +48,7 @@ def predict(im):
 
 col1.header("What is the category? Yelp edition")
 with col1.expander("Click for more information"):
-    st.write('This model reads an image you upload on a restaurant and classifies it into five categories:'
+    st.write('This model reads an image you upload of a restaurant and classifies it into five categories:'
              '- Food'
              '- Drinks'
              '- Exterior'
@@ -59,6 +59,7 @@ def change_image_state():
     st.session_state['image'] = 'done'
 
 file_uploaded = col2.file_uploader("Choose file", type=['png', 'jpg', 'jpeg'], on_change= change_image_state)
+camera_photo = col2.camera_input("Or take a photo yourself")
 
 
 #Creamos una barra de progreso
